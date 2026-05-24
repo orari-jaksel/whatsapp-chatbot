@@ -1,0 +1,23 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /memberData/{memberId} {
+      // Allow read access to authenticated users
+      allow read: if request.auth != null && (request.auth.token.keanggotaan == true || request.auth.token.pengurus == true);
+      
+      // Allow write access to authenticated users with keanggotaan claim set to true
+      allow write: if request.auth != null && request.auth.token.keanggotaan == true;
+    
+    }
+    match /memberData/{memberId}/private/{privateId} {
+      // Allow read private information with keanggotaan claim set to true
+      allow read, write: if request.auth != null && (request.auth.token.keanggotaan == true);
+    }
+    match /memberData/{memberId}/interests/{interestId} {
+      // Allow read access to authenticated users
+      allow read: if request.auth != null && (request.auth.token.keanggotaan == true || request.auth.token.pengurus == true);
+
+			// Allow write interest with keanggotaan claim set to true
+      allow write: if request.auth != null && (request.auth.token.keanggotaan == true);
+    }
+  }
+}

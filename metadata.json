@@ -1,0 +1,6 @@
+{
+  "name": "WhatsApp Chatbot Manager",
+  "description": "A dashboard and management interface for a Twilio and Firebase-powered WhatsApp Chatbot using the Gemini API.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
