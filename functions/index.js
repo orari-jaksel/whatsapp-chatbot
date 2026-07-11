@@ -88,7 +88,7 @@ exports.whatsappBot = onRequest(
         res.set("Content-Type", "text/xml");
         return res.status(200).send(`
           <Response>
-            <Message>Halo. Layanan ini hanya tersedia untuk anggota ORARI Lokal Jakarta Selatan. Apabila sudah menjadi anggota ORARI Jakarta Selatan, mohon menghubungi +6281278910534 (Text Only).\n\nHello. This service is only available to members of ORARI Local Jakarta Selatan. If you are already registered at ORARI Lokal Jakarta Selatan, please reach out to +6281278910534 (Text Only).</Message>
+            <Message>Halo. Ini adalah layanan otomatis ORARI Lokal Jakarta Selatan. Mohon menghubungi +6281278910534 (Text Only) untuk bantuan lebih lanjut.\n\nHello. This automated service of ORARI Local Jakarta Selatan. Please text +6281278910534 (Text Only) for help.</Message>
           </Response>
         `);
       }
